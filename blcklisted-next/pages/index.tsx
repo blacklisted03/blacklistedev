@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import Button from '../components/Button';
+import Header from '../components/Header';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +12,13 @@ export default function Home() {
   
   return (
     <>
-      <div className="flex items-center flex-col justify-center min-h-screen bg-gray-100">
-        <h1 className="text-center text-[52px] text-black font-bold">Hello Nik!</h1>
-        <p className="text-center text-[22px] text-black">Welcome to Next.js World!</p>
-        <Button label="Click Me" onClick={handleClick} />
-      </div>
+      <Header />
+      <section className="relative w-full h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/images/hero-img.jpg)' }}>
+        <div className="flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-50 z-10 relative">
+          <h1 className="text-center text-[80px] text-white font-anton uppercase leading-none">Designing A Better <br /> World Today</h1>
+          <p className="text-center text-[24px] text-white">Welcome to Next.js World!</p>
+        </div>
+      </section>
     </>
   );
 }
